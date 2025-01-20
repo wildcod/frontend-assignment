@@ -1,4 +1,4 @@
-import React, { forwardRef, ForwardRefRenderFunction } from 'react';
+import React, { forwardRef, ForwardRefRenderFunction, AriaRole } from 'react';
 import './Typography.css';
 
 enum TypographySizeClassName {
@@ -33,26 +33,35 @@ interface Props {
   align?: 'center' | 'right';
   color?: string;
   className?: string;
+  ariaLabel?: string;
+  role?: AriaRole;
+  tabIndex?: number;
   decoration?: 'underline' | 'strikethrough';
 }
 
-const Typography: ForwardRefRenderFunction<HTMLElement, Props> = ({
-  as: Component = 'span',
-  testId = 'typography',
-  size = 'body',
-  color = '--black-color',
-  className = '',
-  align,
-  fontWeight,
-  children,
-  decoration,
-  ...rest
-}) => {
+const Typography: ForwardRefRenderFunction<HTMLElement, Props> = (
+  {
+    as: Component = 'span',
+    testId = 'typography',
+    size = 'body',
+    color = '--black-color',
+    className = '',
+    align,
+    fontWeight,
+    children,
+    decoration,
+    ariaLabel,
+    ...rest
+  },
+  ref
+) => {
   return (
     <Component
       className={`app-typography ${TypographySizeClassName[size]} ${align || ''} ${fontWeight || ''} ${decoration || ''} ${className}`}
       style={{ color: `var(${color})` }}
-      data-testId={testId}
+      data-testid={testId}
+      ref={ref}
+      aria-label={ariaLabel}
       {...rest}
     >
       {children}

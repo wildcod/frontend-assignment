@@ -1,7 +1,8 @@
 .app-button,
-.medium {
+.medium,
+.contained {
   border: 0 none;
-  background-color: var(--medium-black-color);
+  background-color: var(--secondary-color);
   color: var(--white-color);
   cursor: pointer;
   border-radius: var(--spacing-spacer_1);
@@ -22,8 +23,18 @@
   line-height: 1.5;
 }
 
+.outlined {
+  border: 1px solid var(--black-medium-color);
+  background-color: var(--white-color);
+  color: var(--black-medium-color);
+}
+
 .app-button:disabled {
-  opacity: 0.5;
+  opacity: 0.3;
   outline: none;
   cursor: not-allowed;
+}
+
+.app-button:focus-visible {
+  outline: 4px solid var(--grey-light-color);
 }

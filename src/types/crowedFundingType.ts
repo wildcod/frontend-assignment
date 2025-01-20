@@ -1,4 +1,4 @@
-export type CrowdFunding = {
+export type CrowedFundingType = {
   's.no': number;
   'amt.pledged': number;
   blurb: string;

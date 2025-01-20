@@ -1,3 +1,7 @@
+.app-typography:focus-visible {
+  outline: 4px solid var(--grey-light-color);
+}
+
 .hero {
   font-weight: 700;
   font-size: 32px;

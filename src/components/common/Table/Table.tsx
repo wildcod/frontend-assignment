@@ -1,28 +1,40 @@
 import Typography from '../Typography/Typography';
 import './Table.css';
 
+export type TableRow = Record<string, number | string>;
+
 type Column = {
   displayText: string;
   key: string;
+  accessor(row: TableRow): string | number;
 };
 
 interface Props<TData> {
   columns: Column[];
   data: TData[];
+  testId?: string;
 }
 
-const Table = <TData extends Record<string, number | string>>({
+const Table = <TData extends TableRow>({
   columns,
-  data
+  data,
+  testId = 'table'
 }: Props<TData>) => {
   return (
-    <div className="app-table-wrapper">
-      <table className="app-table">
+    <div className="app-table-wrapper" data-testid={testId}>
+      <table
+        className="app-table"
+        tabIndex={0}
+        role="presentation"
+        aria-label="crowed funding table"
+      >
         <thead className="app-table-head">
           <tr>
             {columns.map((column) => (
-              <th key={column.key}>
-                <Typography>{column.displayText}</Typography>
+              <th key={column.key} tabIndex={0}>
+                <Typography color="--white-color">
+                  {column.displayText}
+                </Typography>
               </th>
             ))}
           </tr>
@@ -30,15 +42,11 @@ const Table = <TData extends Record<string, number | string>>({
         <tbody className="app-table-body">
           {data.map((item) => (
             <tr key={item['s.no']}>
-              <td>
-                <Typography>{item['s.no']}</Typography>
-              </td>
-              <td>
-                <Typography>{item['percentage.funded']}</Typography>
-              </td>
-              <td>
-                <Typography>{item['amt.pledged']}</Typography>
-              </td>
+              {columns.map((column) => (
+                <td key={column.key} tabIndex={0}>
+                  <Typography>{column.accessor(item)}</Typography>
+                </td>
+              ))}
             </tr>
           ))}
         </tbody>

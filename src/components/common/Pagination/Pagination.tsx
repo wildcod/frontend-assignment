@@ -16,13 +16,14 @@ const Pagination: React.FC<Props> = ({
 }) => {
   return (
     <div className="app-table-pagination">
-      <Button onClick={prevPageClick} disabled={!hasPrev}>
+      <Button onClick={prevPageClick} disabled={!hasPrev} tabIndex={0}>
         Previous
       </Button>
       <Typography as="div" className="page-info">
-        {currentPage} of {totalPages}
+        <Typography tabIndex={0}>{currentPage}</Typography> of{' '}
+        <Typography tabIndex={0}>{totalPages}</Typography>
       </Typography>
-      <Button onClick={nextPageClick} disabled={!hasNext}>
+      <Button onClick={nextPageClick} disabled={!hasNext} tabIndex={0}>
         Next
       </Button>
     </div>

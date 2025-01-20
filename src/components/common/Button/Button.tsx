@@ -9,6 +9,7 @@ interface Props {
   color?: string;
   onClick?(): void;
   variant?: 'contained' | 'outlined';
+  tabIndex?: number;
   className?: string;
 }
 
@@ -19,15 +20,17 @@ const Button: React.FC<Props> = ({
   onClick,
   size = 'medium',
   testId = 'button',
-  variant = 'contained'
+  variant = 'contained',
+  ...rest
 }) => {
   return (
     <button
-      data-testId={testId}
+      data-testid={testId}
       className={`app-button ${size} ${variant}`}
       color={color}
       onClick={onClick}
       disabled={disabled}
+      {...rest}
     >
       {children}
     </button>

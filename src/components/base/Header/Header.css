@@ -1,4 +1,8 @@
 .app-header {
   padding: 1.5rem 2rem;
-  background-color: var(--black-color);
+  background-color: var(--secondary-color);
+}
+
+.app-header .heading {
+  display: inline-block;
 }

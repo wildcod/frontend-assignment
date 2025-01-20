@@ -4,9 +4,14 @@
   /* colors */
   --primary-color: #ff9900;
   --secondary-color: #146eb4;
+  --blue-medium-color: #0093cb;
   --black-color: #000000;
-  --medium-black-color: #232f3e;
+  --black-medium-dark-color: #333333;
+  --black-medium-color: #232f3e;
+  --black-medium-light-color: rgba(0, 0, 0, 0.1);
   --grey-color: #f2f2f2;
+  --grey-light-color: #cccccc;
+  --grey-lighter-color: #f3f3f3;
   --white-color: #fff;
 
   /* spacing */

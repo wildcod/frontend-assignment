@@ -29,8 +29,8 @@ const usePagination = ({
   const hasNext = page < totalPages;
   const hasPrev = page > 1;
 
-  const endIndex = page * itemsPerPage;
-  const startIndex = endIndex - itemsPerPage;
+  const endIndex = totalItems > itemsPerPage ? page * itemsPerPage : totalItems;
+  const startIndex = endIndex - itemsPerPage >= 0 ? endIndex - itemsPerPage : 0;
 
   const nextPageClick = useCallback(() => {
     if (hasNext) {

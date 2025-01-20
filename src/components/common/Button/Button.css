@@ -1,0 +1,29 @@
+.app-button,
+.medium {
+  border: 0 none;
+  background-color: var(--medium-black-color);
+  color: var(--white-color);
+  cursor: pointer;
+  border-radius: var(--spacing-spacer_1);
+
+  padding: var(--spacing-spacer_2) var(--spacing-spacer_3);
+  font-weight: 600;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.small {
+  padding: var(--spacing-spacer_1) var(--spacing-spacer_2);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.app-button:disabled {
+  opacity: 0.5;
+  outline: none;
+  cursor: not-allowed;
+}

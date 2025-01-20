@@ -1,0 +1,110 @@
+.hero {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.title1 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.title2 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.title3 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.title4 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.large {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.body {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.small {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.mini {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.micro {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.semiBold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+@media (min-width: var(--viewport-M)) {
+  .hero {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .title1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .title2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .small {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .mini {
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .micro {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}

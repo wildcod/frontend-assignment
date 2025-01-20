@@ -1,0 +1,13 @@
+.app-table-pagination {
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.app-table-pagination .page-info {
+  padding: 1rem;
+  min-width: 75px;
+  text-align: center;
+}
